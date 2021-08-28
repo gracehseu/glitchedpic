@@ -1,10 +1,13 @@
 from PIL import Image
 import numpy
+import metMuseum
+import random
 
 def transform(image):
 
     im = Image.open(image)
-    im1 = im.transpose(Image.FLIP_LEFT_RIGHT)
+    transformations = [Image.FLIP_LEFT_RIGHT, Image.FLIP_TOP_BOTTOM]
+    im1 = im.transpose(random.choice(transformations))
     # im.show()
     # im1.show()
 
@@ -20,4 +23,7 @@ def transform(image):
     Image.open("altered" + image).show()
 
 if __name__ == '__main__':
-    transform("starrynight.jpg")
+    # transform("starrynight.jpg")
+    # transform("Wheat Field with Cypresses.jpeg")
+    image_to_transform = metMuseum.getMetImage()
+    transform(image_to_transform)
