@@ -1,15 +1,17 @@
-
-from flip_image_and_combine import flip_image_and_combine
-import numpy
-from metMuseum import met_museum_retriver
-
-museum_list = [met_museum_retriver]
-glitch_list = [flip_image_and_combine]
+from glitches.FlipImageAndCombine import FlipImageAndCombine
+from museums.metMuseum import MetMuseumRetriever
+from museums.ArtInstutitueChicago import ArtInstituteChicagoRetriever
+from glitches.Anaglyph3dEffect import Anaglyph3dEffect
+import random
+museum_list = [MetMuseumRetriever, ArtInstituteChicagoRetriever]
+glitch_list = [FlipImageAndCombine, Anaglyph3dEffect]
 
 if __name__ == '__main__':
-    # transform("starrynight.jpg")
-    # transform("Wheat Field with Cypresses.jpeg")
-    source = museum_list[0]()
+
+    # glitch = random.choice(museum_list)()
+    source = museum_list[1]()
     source.get_image()
-    glitch = glitch_list[0]()
+
+    # glitch = random.choice(glitch_list)()
+    glitch = glitch_list[1]()
     glitch.glitch_image(source.name)
