@@ -12,9 +12,9 @@ class Anaglyph3dEffect(ImageGlitcherInterface):
 
     def glitch_image(self, image_name):
         print(str(image_name))
-        im = Image.open("images/" + image_name)
+        image_name = "Love of Winter.jpeg"
+        im = Image.open("images/" + image_name).convert('RGB')
 
-        orig_img = np.array(im)
 
         r, g, b = im.split()
 
@@ -30,8 +30,26 @@ class Anaglyph3dEffect(ImageGlitcherInterface):
 
         print(len(r), len(r[0]))
         print(len(b), len(b[0]))
-        print(r[0][2])
+        print(r[0])
 
-        self.save_image(image_name, new_img)
+        # a = 0
+        # b = 0
+        # c = -100 #left/right (i.e. 5/-5)
+        # d = 0
+        # e = 0
+        # f = -100 #up/down (i.e. 5/-5)
+        # red = red.transform(red.size, Image.AFFINE, (a, b, c, d, e, f))
+        
+        # a = 0
+        # b = 0
+        # c = 100 #left/right (i.e. 5/-5)
+        # d = 0
+        # e = 0
+        # f = 100 #up/down (i.e. 5/-5)
+        # blue = blue.transform(blue.size, Image.AFFINE, (a, b, c, d, e, f))
+        
+
+        new_image = Image.merge('RGB', (red, green, blue))
+        self.save_image(image_name, new_image)
 
     

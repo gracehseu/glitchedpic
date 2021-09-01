@@ -25,6 +25,8 @@ class FlipImageAndCombine(ImageGlitcherInterface):
         for i in range(0, len(orig_img), 2):
             orig_img[i] = flip_img[i]
 
+        orig_img = Image.fromarray(orig_img)
+
         self.save_image(image_name, orig_img)
 
     

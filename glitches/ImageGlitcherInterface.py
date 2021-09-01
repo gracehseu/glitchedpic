@@ -7,8 +7,7 @@ class ImageGlitcherInterface():
     def glitch_image(self):
         return self.image_glitch_type
 
-    def save_image(self, image_name, image):
-        new_img = Image.fromarray(image)
+    def save_image(self, image_name, new_img):
 
         new_img.save("images/altered" + image_name)
 
