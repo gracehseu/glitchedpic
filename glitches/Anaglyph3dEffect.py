@@ -32,21 +32,6 @@ class Anaglyph3dEffect(ImageGlitcherInterface):
         print(len(b), len(b[0]))
         print(r[0])
 
-        # a = 0
-        # b = 0
-        # c = -100 #left/right (i.e. 5/-5)
-        # d = 0
-        # e = 0
-        # f = -100 #up/down (i.e. 5/-5)
-        # red = red.transform(red.size, Image.AFFINE, (a, b, c, d, e, f))
-        
-        # a = 0
-        # b = 0
-        # c = 100 #left/right (i.e. 5/-5)
-        # d = 0
-        # e = 0
-        # f = 100 #up/down (i.e. 5/-5)
-        # blue = blue.transform(blue.size, Image.AFFINE, (a, b, c, d, e, f))
         
 
         new_image = Image.merge('RGB', (red, green, blue))
