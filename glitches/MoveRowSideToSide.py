@@ -23,12 +23,16 @@ class MoveRowSideToSide(ImageGlitcherInterface):
 
         glitch_start = int(im_height * (3 / 5) + (random.randint(int(im_height * (1 / 8)), int(im_height * (1 / 7))) * (1 if random.random() < 0.5 else -1)))
 
-        for row in range(glitch_start, glitch_start + (random.randint(int(im_height * (1 / 6)), int(im_height * (1 / 5))))):
-            # print(type(image_arr))
-            # print(image_arr[row])
-            shifted_arr = image_arr[row]
-            shifted_arr = np.roll(shifted_arr, random.randint(-50, 50))
-            image_arr[row] = shifted_arr
+        for row in range(glitch_start, glitch_start + (random.randint(int(im_height * (1 / 6)), int(im_height * (1 / 5)))), 5):
+
+            row_shift =  random.randint(-50, 50)
+
+            for i in range(0, 5):
+                
+                shifted_arr = image_arr[row + i]
+                shifted_arr = np.roll(shifted_arr, row_shift,  axis=0)
+                image_arr[row + i] = shifted_arr
+
 
         new_image = Image.fromarray(image_arr, 'RGB')
         self.save_image(image_name, new_image)
