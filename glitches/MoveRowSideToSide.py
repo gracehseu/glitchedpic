@@ -19,7 +19,7 @@ class MoveRowSideToSide(ImageGlitcherInterface):
         # print(image_arr)
         im_width, im_height = im.size
 
-        print(im_width, im_height)
+        # print(im_width, im_height)
 
         glitch_start = int(im_height * (3 / 5) + (random.randint(int(im_height * (1 / 8)), int(im_height * (1 / 7))) * (1 if random.random() < 0.5 else -1)))
 
@@ -29,12 +29,18 @@ class MoveRowSideToSide(ImageGlitcherInterface):
 
             for i in range(0, 5):
                 
-                shifted_arr = image_arr[row + i]
-                shifted_arr = np.roll(shifted_arr, row_shift,  axis=0)
-                image_arr[row + i] = shifted_arr
+                # shifted_arr = image_arr[row + i]
+                # shifted_arr = np.roll(shifted_arr, row_shift,  axis=0)
+                # image_arr[row + i] = shifted_arr
+                image_arr[row + i] = shiftRow(image_arr[row + i], row_shift)
 
 
         new_image = Image.fromarray(image_arr, 'RGB')
         self.save_image(image_name, new_image)
 
-    
+def shiftRow(row, shift_amount):
+    shifted_arr = np.roll(row, shift_amount,  axis=0)
+    return shifted_arr
+
+
+# def shiftColumn(col, shift_amount):
