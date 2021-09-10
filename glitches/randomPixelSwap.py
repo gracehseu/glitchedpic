@@ -10,7 +10,6 @@ class randomPixelSwap(ImageGlitcherInterface):
 
     def glitch_image(self, image_name):
         print(str(image_name))
-        image_name = "Distant View of Niagara Falls.jpeg"
         im = Image.open("images/" + image_name)
 
         image_arr = np.asarray(im).copy()

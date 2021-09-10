@@ -17,7 +17,7 @@ class MetMuseumRetriever(ImageRetrieverInterface):
         image_json = object_id_result.json()
         image_url = image_json["primaryImage"]
         # print(imageUrl)
-        saved_image_name = "{}.jpeg".format()
+        saved_image_name = "{}.jpeg".format(image_json["title"])
         # getImage = requests.get(imageUrl)
         # if getImage.status_code == 200:
         #     with open(saved_image_name, 'wb') as f:

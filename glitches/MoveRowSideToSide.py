@@ -12,7 +12,6 @@ class MoveRowSideToSide(ImageGlitcherInterface):
 
     def glitch_image(self, image_name):
         print(str(image_name))
-        image_name = "Love of Winter.jpeg"
         im = Image.open("images/" + image_name)
 
         image_arr = np.asarray(im).copy()
