@@ -1,17 +1,23 @@
-from glitches.randomPixelSwap import randomPixelSwap
-from glitches.MoveRowSideToSide import MoveRowSideToSide
-from glitches.FlipImageAndCombine import FlipImageAndCombine
-from museums.metMuseum import MetMuseumRetriever
-from museums.ArtInstutitueChicago import ArtInstituteChicagoRetriever
-from glitches.Anaglyph3dEffect import Anaglyph3dEffect
-import random
-museum_list = [MetMuseumRetriever, ArtInstituteChicagoRetriever]
-glitch_list = [FlipImageAndCombine, MoveRowSideToSide, randomPixelSwap]
+from PIL import Image
+import numpy
+
+def transform(image):
+
+    im = Image.open(image)
+    im1 = im.transpose(Image.FLIP_LEFT_RIGHT)
+    # im.show()
+    # im1.show()
+
+    orig_img = numpy.asarray(im)
+    flip_img = numpy.asarray(im1)
+
+    for i in range(0, len(orig_img), 2):
+        orig_img[i] = flip_img[i]
+
+    new_img = Image.fromarray(orig_img)
+    new_img.save("altered" + image)
+
+    Image.open("altered" + image).show()
 
 if __name__ == '__main__':
-
-    source = random.choice(museum_list)()
-    source.get_image()
-
-    glitch = random.choice(glitch_list)()
-    glitch.glitch_image(source.name)
+    transform("starrynight.jpg")
