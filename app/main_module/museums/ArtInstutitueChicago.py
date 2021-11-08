@@ -1,4 +1,4 @@
-from museums.ImageRetrieverInterface import ImageRetrieverInterface
+from ImageRetrieverInterface import ImageRetrieverInterface
 import requests
 import random
 
@@ -10,6 +10,7 @@ def queryForObject(objectId):
     query_for_object = "https://api.artic.edu/api/v1/artworks/" + str(objectId) + "?fields=id,title,image_id"
     return query_for_object
 
+
 class ArtInstituteChicagoRetriever(ImageRetrieverInterface):
 
     def get_image(self):
@@ -19,7 +20,7 @@ class ArtInstituteChicagoRetriever(ImageRetrieverInterface):
         object_id_list = search_query_json["data"]
 
         random_image = random.choice(object_id_list)
-        
+
         image_result = requests.get(queryForObject(random_image["id"]))
 
         image_json = image_result.json()

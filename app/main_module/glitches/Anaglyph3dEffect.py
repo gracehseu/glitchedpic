@@ -1,4 +1,4 @@
-from glitches.ImageGlitcherInterface import ImageGlitcherInterface
+from ImageGlitcherInterface import ImageGlitcherInterface
 from PIL import Image
 from scipy.ndimage import rotate
 import random

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<body>
+    <center>
+        <img src="{{ url_for('static', filename=image_name) }}" alt="{{ image_name }}" width="400px">
+        <img src="{{ url_for('static', filename=altered_image_name) }}" alt="{{ altered_image_name }}" width="400px">
+    </center>
+</body>
+    
+
+
+{% endblock %}

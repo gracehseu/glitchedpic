@@ -1,4 +1,4 @@
-from glitches.ImageGlitcherInterface import ImageGlitcherInterface
+from ImageGlitcherInterface import ImageGlitcherInterface
 from PIL import Image
 from scipy.ndimage import rotate
 import random
@@ -12,7 +12,7 @@ class MoveRowSideToSide(ImageGlitcherInterface):
 
     def glitch_image(self, image_name):
         print(str(image_name))
-        im = Image.open("images/" + image_name)
+        im = Image.open("{}/{}".format(self.image_location, image_name))
 
         image_arr = np.asarray(im).copy()
         # print(image_arr)

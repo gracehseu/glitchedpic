@@ -1,4 +1,4 @@
-from glitches.ImageGlitcherInterface import ImageGlitcherInterface
+from ImageGlitcherInterface import ImageGlitcherInterface
 from PIL import Image
 import random
 import numpy
@@ -10,7 +10,7 @@ class FlipImageAndCombine(ImageGlitcherInterface):
 
     def glitch_image(self, image_name):
         print(str(image_name))
-        im = Image.open("images/" + image_name)
+        im = Image.open("{}/{}".format(self.image_location, image_name))
         transformations = [Image.FLIP_LEFT_RIGHT, Image.FLIP_TOP_BOTTOM, Image.ROTATE_180]
         im1 = im.transpose(random.choice(transformations))
         # im.show()

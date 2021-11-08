@@ -8,7 +8,7 @@ import random
 museum_list = [MetMuseumRetriever, ArtInstituteChicagoRetriever]
 glitch_list = [FlipImageAndCombine, MoveRowSideToSide, randomPixelSwap]
 
-if __name__ == '__main__':
+def createGlitchedArtWork():
 
     source = random.choice(museum_list)()
     source.get_image()

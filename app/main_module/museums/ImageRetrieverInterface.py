@@ -13,5 +13,5 @@ class ImageRetrieverInterface():
         saved_image_name = saved_image_name.strip("\"")
         getImage = requests.get(url)
         if getImage.status_code == 200:
-            with open("images/" + saved_image_name, 'wb') as f:
+            with open("{}/{}".format(self.image_location, saved_image_name), 'wb') as f:
                 f.write(getImage.content)

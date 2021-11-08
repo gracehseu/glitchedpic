@@ -1,10 +1,14 @@
-from museums.ImageRetrieverInterface import ImageRetrieverInterface
+from ImageRetrieverInterface import ImageRetrieverInterface
 import requests
-search_query = "https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true&q=sunflowers"
+
+search_query = "https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true&q" \
+               "=sunflowers "
+
 
 def queryForObject(objectId):
     query_for_object = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
     return query_for_object + str(objectId)
+
 
 class MetMuseumRetriever(ImageRetrieverInterface):
 

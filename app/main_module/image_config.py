@@ -1,0 +1,1 @@
+IMAGE_LOCATION = "../images"
