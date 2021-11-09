@@ -1,4 +1,4 @@
-from ImageGlitcherInterface import ImageGlitcherInterface
+from app.main_module.glitches.ImageGlitcherInterface import ImageGlitcherInterface
 from PIL import Image
 import random
 import numpy

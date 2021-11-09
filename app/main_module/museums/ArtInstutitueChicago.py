@@ -1,8 +1,9 @@
-from ImageRetrieverInterface import ImageRetrieverInterface
 import requests
 import random
 
 # top 100 photos
+from app.main_module.museums.ImageRetrieverInterface import ImageRetrieverInterface
+
 search_query = "https://api.artic.edu/api/v1/artworks/search?query[term][is_public_domain]=true&limit=100&fields=id,title,image_id"
 
 

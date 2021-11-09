@@ -1,8 +1,9 @@
-from ImageGlitcherInterface import ImageGlitcherInterface
 from PIL import Image
 from scipy.ndimage import rotate
 import random
 import numpy as np
+
+from app.main_module.glitches.ImageGlitcherInterface import ImageGlitcherInterface
 
 
 class MoveRowSideToSide(ImageGlitcherInterface):

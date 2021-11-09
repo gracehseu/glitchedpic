@@ -1,4 +1,4 @@
-from ImageRetrieverInterface import ImageRetrieverInterface
+from app.main_module.museums.ImageRetrieverInterface import ImageRetrieverInterface
 import requests
 
 search_query = "https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true&q" \

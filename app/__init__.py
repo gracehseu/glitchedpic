@@ -5,6 +5,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
 
 # importing blueprints from modules
+from app.main_module.glitch import createGlitchedArtWork
 from .main_module.controllers import main_bp
 from .module_ex_2.controllers import module_ex_2_bp
 
@@ -27,8 +28,7 @@ executors = {
 # scheduler
 sched = BackgroundScheduler(timezone='America/Chicago', executors=executors, daemon=True)
 
-
-
-
 if __name__ == '__main__':
+    sched.add_job(createGlitchedArtWork, 'interval', seconds='10')
+    sched.start()
     app.run()

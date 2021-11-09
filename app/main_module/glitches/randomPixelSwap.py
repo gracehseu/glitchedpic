@@ -1,7 +1,8 @@
-from ImageGlitcherInterface import ImageGlitcherInterface
 from PIL import Image
 import numpy as np
 import random
+
+from app.main_module.glitches.ImageGlitcherInterface import ImageGlitcherInterface
 
 
 class randomPixelSwap(ImageGlitcherInterface):
