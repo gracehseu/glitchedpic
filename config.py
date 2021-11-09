@@ -2,4 +2,6 @@
 DEBUG = True
 
 # disabling cross site request forgery
-CSRF_ENEABLED = True
+CSRF_ENABLED = True
+
+IMAGE_LOCATION = './static'
