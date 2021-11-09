@@ -26,9 +26,16 @@ executors = {
 }
 
 # scheduler
-sched = BackgroundScheduler(timezone='America/Chicago', executors=executors, daemon=True)
+sched = BackgroundScheduler(timezone='America/Chicago', daemon=True)
+# print("hello outside?")
+sched.add_job(createGlitchedArtWork, 'interval', seconds=10)
+sched.start()
+# sched.print_jobs()
+# app.run()
 
 if __name__ == '__main__':
-    sched.add_job(createGlitchedArtWork, 'interval', seconds='10')
-    sched.start()
+    # print("hello?")
+    # sched.add_job(createGlitchedArtWork, 'interval', seconds='10')
+    # sched.start()
+    # sched.print_jobs()
     app.run()

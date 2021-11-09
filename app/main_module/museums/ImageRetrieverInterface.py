@@ -1,12 +1,14 @@
 import requests
 
 from app.main_module.DateUtil import getTodaysDateAsString
+from app.main_module.image_config import IMAGE_LOCATION
 
 
 class ImageRetrieverInterface():
 
     def __init__(self):
         self.name = None
+        self.image_location = IMAGE_LOCATION
 
     def get_image(self):
         return self.name
