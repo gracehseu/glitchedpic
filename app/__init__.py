@@ -28,7 +28,7 @@ executors = {
 # scheduler
 sched = BackgroundScheduler(timezone='America/Chicago', daemon=True)
 # print("hello outside?")
-sched.add_job(createGlitchedArtWork, 'interval', minutes=1)
+sched.add_job(createGlitchedArtWork, 'interval', seconds=20)
 sched.start()
 # sched.print_jobs()
 # app.run()
