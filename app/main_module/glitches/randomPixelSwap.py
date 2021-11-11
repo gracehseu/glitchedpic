@@ -7,8 +7,8 @@ from app.main_module.glitches.ImageGlitcherInterface import ImageGlitcherInterfa
 
 class randomPixelSwap(ImageGlitcherInterface):
 
-    def __init__(self):
-        self.image_glitch_type = "random pixel swap"
+    # def __init__(self):
+    #     self.image_glitch_type = "random pixel swap"
 
     def glitch_image(self, image_name):
         print(str(image_name))
@@ -39,4 +39,4 @@ class randomPixelSwap(ImageGlitcherInterface):
                                                                                       image_arr[i][j]
 
         new_image = Image.fromarray(image_arr, 'RGB')
-        self.save_image(self.image_glitch_type + image_name, new_image)
+        self.save_image(image_name, new_image)

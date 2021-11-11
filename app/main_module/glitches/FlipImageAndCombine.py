@@ -5,8 +5,8 @@ import numpy
 
 class FlipImageAndCombine(ImageGlitcherInterface):
 
-    def __init__(self):
-        self.image_glitch_type = "flip_image_and_combine"
+    # def __init__(self):
+    #     self.image_glitch_type = "flip_image_and_combine"
 
     def glitch_image(self, image_name):
         print(str(image_name))

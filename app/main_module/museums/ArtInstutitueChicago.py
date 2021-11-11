@@ -36,3 +36,4 @@ class ArtInstituteChicagoRetriever(ImageRetrieverInterface):
         #         f.write(get_image.content)
         self.save_image(saved_image_name, image_url)
         self.name = saved_image_name
+        print(saved_image_name)

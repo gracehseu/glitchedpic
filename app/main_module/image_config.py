@@ -1,2 +1,2 @@
 
-IMAGE_LOCATION = '../../static'
+IMAGE_LOCATION = './app/static/images'
