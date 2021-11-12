@@ -1,5 +1,7 @@
 from app.main_module.glitches.ImageGlitcherInterface import ImageGlitcherInterface
-from PIL import Image
+from PIL import Image, ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
+
 import random
 import numpy
 

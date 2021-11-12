@@ -1,4 +1,7 @@
-from PIL import Image
+from PIL import Image, ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
+
+
 from scipy.ndimage import rotate
 import random
 import numpy as np
