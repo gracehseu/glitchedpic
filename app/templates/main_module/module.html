@@ -4,8 +4,15 @@
 
 <body>
     <center>
-        <img src="{{ url_for('static', filename=image_name) }}" alt="{{ image_name }}" width="400px">
-        <img src="{{ url_for('static', filename=altered_image_name) }}" alt="{{ altered_image_name }}" width="400px">
+        <div class="row">
+          <div class="column">
+            <img src="{{ url_for('static', filename=image_name) }}" alt="{{ image_name }}" style="width:80%" height="90vh">
+          </div>
+          <div class="column">
+            <img src="{{ url_for('static', filename=altered_image_name) }}" alt="{{ altered_image_name }}" style="width:80%" height="90vh">
+          </div>
+        </div>
+
     </center>
 </body>
     
