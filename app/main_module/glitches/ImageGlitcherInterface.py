@@ -5,9 +5,12 @@ from app.main_module.image_config import IMAGE_LOCATION
 
 
 class ImageGlitcherInterface:
+
+    image_location = IMAGE_LOCATION
+
     def __init__(self):
         self.image_glitch_type = None
-        self.image_location = IMAGE_LOCATION
+
 
     def glitch_image(self, image_name):
         return self.image_glitch_type
