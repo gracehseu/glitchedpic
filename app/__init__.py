@@ -22,6 +22,7 @@ app.register_blueprint(module_ex_2_bp)
 # scheduler
 sched = BackgroundScheduler(timezone='America/Chicago', daemon=True)
 sched.add_job(createGlitchedArtWork, 'interval', seconds=20)
+
 sched.start()
 
 if __name__ == '__main__':

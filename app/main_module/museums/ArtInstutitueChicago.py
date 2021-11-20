@@ -29,11 +29,7 @@ class ArtInstituteChicagoRetriever(ImageRetrieverInterface):
         saved_image_name = "{}.jpeg".format(image_json["data"]["title"])
 
         image_url = image_json["config"]["iiif_url"] + "/" + image_json["data"]["image_id"] + "/full/843,/0/default.jpg"
-        # get_image = requests.get(image_url)
 
-        # if get_image.status_code == 200:
-        #     with open(saved_image_name, 'wb') as f:
-        #         f.write(get_image.content)
         self.save_image(saved_image_name, image_url)
         self.name = saved_image_name
         print(saved_image_name)

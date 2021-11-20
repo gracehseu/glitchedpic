@@ -6,6 +6,8 @@ from app.main_module.museums.ArtInstutitueChicago import ArtInstituteChicagoRetr
 from app.main_module.museums.metMuseum import MetMuseumRetriever
 from app.main_module.DateUtil import getTodaysDateAsString
 # from glitches.Anaglyph3dEffect import Anaglyph3dEffect
+from mem_top import mem_top
+
 import random
 
 museum_list = [MetMuseumRetriever, ArtInstituteChicagoRetriever]
@@ -13,6 +15,7 @@ glitch_list = [FlipImageAndCombine, MoveRowSideToSide, randomPixelSwap]
 
 
 def createGlitchedArtWork():
+    print(mem_top())
     print("creating new artwork")
     source = random.choice(museum_list)()
     # source = MetMuseumRetriever()
