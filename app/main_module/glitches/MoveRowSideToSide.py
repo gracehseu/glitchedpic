@@ -11,8 +11,8 @@ from app.main_module.glitches.ImageGlitcherInterface import ImageGlitcherInterfa
 
 class MoveRowSideToSide(ImageGlitcherInterface):
 
-    # def __init__(self):
-    #     self.image_glitch_type = "move random row from side to side"
+    def __init__(self):
+        self.image_glitch_type = "move random row from side to side"
 
     def glitch_image(self, image_name):
         print(str(image_name))

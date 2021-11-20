@@ -19,5 +19,6 @@ def createGlitchedArtWork():
     source.get_image()
 
     glitch = random.choice(glitch_list)()
+    print(glitch.image_glitch_type)
     glitch.glitch_image(getTodaysDateAsString() + ".jpeg")
     print("glitched art created")

@@ -10,10 +10,11 @@ from app.main_module.glitches.ImageGlitcherInterface import ImageGlitcherInterfa
 
 class randomPixelSwap(ImageGlitcherInterface):
 
-    # def __init__(self):
-    #     self.image_glitch_type = "random pixel swap"
+    def __init__(self):
+        self.image_glitch_type = "random pixel swap"
 
     def glitch_image(self, image_name):
+
         print(str(image_name))
         im = Image.open("{}/{}".format(self.image_location, image_name))
 
