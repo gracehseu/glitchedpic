@@ -14,6 +14,9 @@ def queryForObject(objectId):
 
 class ArtInstituteChicagoRetriever(ImageRetrieverInterface):
 
+    def __init__(self):
+        self.museum_name = "Art Institute of Chicago"
+
     def get_image(self):
         search_query_result = requests.get(search_query)
         search_query_json = search_query_result.json()

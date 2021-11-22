@@ -19,6 +19,7 @@ def createGlitchedArtWork():
     source = random.choice(museum_list)()
     # source = MetMuseumRetriever()
     source.get_image()
+    print(source.museum_name)
 
     glitch = random.choice(glitch_list)()
     print(glitch.image_glitch_type)

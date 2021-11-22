@@ -5,10 +5,11 @@ from app.main_module.image_config import IMAGE_LOCATION
 
 
 class ImageRetrieverInterface():
+    image_location = IMAGE_LOCATION
 
     def __init__(self):
-        self.name = None
-        self.image_location = IMAGE_LOCATION
+        self.museum_name = None
+
 
     def get_image(self):
         return self.name
