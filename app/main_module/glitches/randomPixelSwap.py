@@ -43,4 +43,5 @@ class randomPixelSwap(ImageGlitcherInterface):
                                                                                       image_arr[i][j]
 
         new_image = Image.fromarray(image_arr, 'RGB')
+        del image_arr
         self.save_image(image_name, new_image)

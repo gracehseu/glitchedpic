@@ -1,6 +1,6 @@
 from PIL import Image, ImageFile
-ImageFile.LOAD_TRUNCATED_IMAGES = True
 
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 from scipy.ndimage import rotate
 import random
@@ -24,26 +24,27 @@ class MoveRowSideToSide(ImageGlitcherInterface):
 
         # print(im_width, im_height)
 
-        glitch_start = int(im_height * (3 / 5) + (random.randint(int(im_height * (1 / 8)), int(im_height * (1 / 7))) * (1 if random.random() < 0.5 else -1)))
+        glitch_start = int(im_height * (3 / 5) + (random.randint(int(im_height * (1 / 8)), int(im_height * (1 / 7))) * (
+            1 if random.random() < 0.5 else -1)))
 
-        for row in range(glitch_start, glitch_start + (random.randint(int(im_height * (1 / 6)), int(im_height * (1 / 5)))), 5):
+        for row in range(glitch_start,
+                         glitch_start + (random.randint(int(im_height * (1 / 6)), int(im_height * (1 / 5)))), 5):
 
-            row_shift =  random.randint(-50, 50)
+            row_shift = random.randint(-50, 50)
 
             for i in range(0, 5):
-                
                 # shifted_arr = image_arr[row + i]
                 # shifted_arr = np.roll(shifted_arr, row_shift,  axis=0)
                 # image_arr[row + i] = shifted_arr
-                image_arr[row + i] = shiftRow(image_arr[row + i], row_shift)
-
+                image_arr[row + i] = shift_row(image_arr[row + i], row_shift)
 
         new_image = Image.fromarray(image_arr, 'RGB')
+        del image_arr
         self.save_image(image_name, new_image)
 
-def shiftRow(row, shift_amount):
-    shifted_arr = np.roll(row, shift_amount,  axis=0)
-    return shifted_arr
 
+def shift_row(row, shift_amount):
+    shifted_arr = np.roll(row, shift_amount, axis=0)
+    return shifted_arr
 
 # def shiftColumn(col, shift_amount):
